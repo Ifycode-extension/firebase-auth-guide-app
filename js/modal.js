@@ -31,3 +31,6 @@ modalSection.addEventListener('click', e => {
         });
     }
 }, false);
+
+// export for use in auth.js
+export default linksWithDataTarget;

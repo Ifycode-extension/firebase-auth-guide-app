@@ -121,7 +121,12 @@
         </div>
     </section>
 
-    <script src="./js/index.js" defer></script>
-    <script src="./js/modal.js"></script>
+    <!-- App scripts: make them type module to avoid errors -->
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/modal.js"></script>
+
+    <!-- Firebase and auth scripts -->
+    <script type="module" src="./js/base.js"></script>
+    <script type="module" src="./js/auth.js"></script>  
 </body>
 </html>
