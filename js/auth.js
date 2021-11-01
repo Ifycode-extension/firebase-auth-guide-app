@@ -13,6 +13,16 @@ let closeModalAndResetForm = (form) => {
 }
 
 
+//===[ Authentication starts from here ]===//
+
+
+//listen for auth status changes
+auth.onAuthStateChanged(user => {
+    if (user) console.log('User logged in: ', user);
+        else console.log('User looged out!');
+});
+
+
 // Sign user up
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', e => {
@@ -21,7 +31,7 @@ signupForm.addEventListener('submit', e => {
     const passWordValue = signupForm['signup-password'].value;
 
     createUserWithEmailAndPassword(auth, emailValue, passWordValue).then(cred => {
-        console.log(cred.user);
+        //console.log(cred.user);
         closeModalAndResetForm(signupForm);
     });
 });
@@ -31,9 +41,9 @@ signupForm.addEventListener('submit', e => {
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', e => {
     e.preventDefault();
-    auth.signOut().then(() => {
+    auth.signOut();/*.then(() => {
         console.log('User signed out!');
-    });
+    });*/
 });
 
 
@@ -45,7 +55,7 @@ loginForm.addEventListener('submit', e => {
     const passWordValue = loginForm['login-password'].value;
 
     signInWithEmailAndPassword(auth, emailValue, passWordValue).then(cred => {
-        console.log(cred.user);
+        //console.log(cred.user);
         closeModalAndResetForm(loginForm);
     });
 });
