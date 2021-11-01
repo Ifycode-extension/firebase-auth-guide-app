@@ -1,0 +1,121 @@
+
+.modal-section {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0; /* important */
+    z-index: 8888; /* important */
+}
+
+.modal {
+    /*width: max-content;*/
+    background: var(--white);
+    width: 90%;
+    max-width: unset;
+    border-radius: 2px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    margin-top: 80px;
+    z-index: 9999; /* important */
+}
+
+.modal-content {
+    width: 85%;
+    padding: 25px 0;
+    margin: 0 auto;
+}
+
+.modal-content h4 {
+    font-size: 1.75em;
+    color: var(--theme-text);
+    margin-bottom: 20px;
+}
+
+.modal .input-field {
+    position: relative;
+    margin:  0 0 10px 0;
+}
+
+.modal input,
+.modal textarea {
+    width: 100%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--theme-lighttext);
+    padding: 5px;
+    font-size: 1em;
+    color: var(--theme-text);
+}
+
+.modal textarea {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.btn {
+    background: rgb(255, 207, 75);
+    color: white;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    border-radius: 2px;
+    margin-top: 8px;
+}
+
+.modal label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    color: var(--theme-lighttext);
+    cursor: text;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label,
+textarea:focus ~ label,
+textarea:not(:placeholder-shown) ~ label {
+  z-index: -1;
+  /* https://dev.to/piguicorn/labels-as-placeholders-labels-as-placeholders-10ei */
+}
+
+
+@media screen and (min-width: 450px) {
+    .modal-content h4 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    
+    .modal .input-field {
+        margin:  0 0 20px 0;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .modal {
+        width: 450px;
+    }
+
+    .modal-content {
+        padding: 30px 0;
+    }
+    
+    .btn {
+        font-size: 1.1em;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .modal {
+        width: 550px;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .modal {
+        margin-top: 40px;
+    }
+}
+

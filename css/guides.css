@@ -1,0 +1,25 @@
+
+.container {
+    margin-top: 40px;
+}
+
+.container li {
+    background: var(--white);
+    color: var(--theme-text);
+    margin: 0 0 2px 0;
+    box-shadow: 1px 1px 3px var(--shadow);
+}
+
+.container li > * {
+    padding: 10px;
+}
+
+.container li > div:nth-child(1){
+    font-size: 1.15em;
+}
+
+.collapse-body {
+    font-size: 1em;
+    border: 1px solid transparent;
+    border-top: 1px solid #eeeeee;
+}

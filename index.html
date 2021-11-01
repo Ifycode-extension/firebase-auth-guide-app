@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games guide</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="brand-logo">
+                <img src="./img/logo.svg" alt="games guide logo">
+            </a>
+            <ul class="hide-on-smaller-screens">
+                <li class="logged-in">
+                    <a href="#" data-target="modal-account">Account</a>
+                </li>
+                <li class="logged-in">
+                    <a href="#">Logout</a>
+                </li>
+                <li class="logged-in">
+                    <a href="#" data-target="modal-create">Create Guide</a>
+                </li>
+                <li class="logged-out">
+                    <a href="#" data-target="modal-login">Login</a>
+                </li>
+                <li class="logged-out">
+                    <a href="#" data-target="modal-signup">Sign Up</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="modal-section" class="modal-section">
+        <!-- SIGN UP MODAL -->
+        <div id="modal-signup" class="modal">
+            <div class="modal-content">
+                <h4>Sign up</h4>
+                <form id="signup-form">
+                    <div class="input-field">
+                        <input type="email" id="signup-email" placeholder=" " required />
+                        <label for="signup-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" placeholder=" " required />
+                        <label for="signup-password">Choose password</label>
+                    </div>
+                    <button class="btn">Sign up</button>
+                </form>
+            </div>
+        </div>
+
+         <!-- LOGIN MODAL -->
+        <div id="modal-login" class="modal">
+            <div class="modal-content">
+                <h4>Login</h4>
+                <form id="login-form">
+                    <div class="input-field">
+                        <input type="email" id="login-email" placeholder=" " required />
+                        <label for="login-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="login-password" placeholder=" " required />
+                        <label for="login-password">Your password</label>
+                    </div>
+                    <button class="btn">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ACCOUNT MODAL -->
+        <div id="modal-account" class="modal">
+            <div class="modal-content">
+                <h4>Account details</h4>
+                <div class="account-details"></div>
+            </div>
+        </div>
+
+        <!-- CREATE GUIDE MODAL -->
+        <div id="modal-create" class="modal">
+            <div class="modal-content">
+            <h4>Create Guide</h4>
+            <form id="create-form">
+                <div class="input-field">
+                    <input type="text" id="title" placeholder=" " required>
+                    <label for="title">Guide Title</label>
+                </div>
+                <div class="input-field">
+                    <textarea id="content" placeholder=" " required></textarea>
+                    <label for="content">Guide Content</label>
+                </div>
+                <button class="btn">Create</button>
+            </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-list">
+        <!-- GUIDE LIST -->
+        <div class="container">
+            <ul class="collapse-container">
+                <li>
+                    <div>Guide title</div>
+                    <div class="collapse-body collapse"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+                <li>
+                    <div>Guide title</div>
+                    <div class="collapse-body collapse"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+                <li>
+                    <div>Guide title</div>
+                    <div class="collapse-body collapse"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+                <li>
+                    <div>Guide title</div>
+                    <div class="collapse-body collapse"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="./js/index.js" defer></script>
+    <script src="./js/modal.js"></script>
+</body>
+</html>

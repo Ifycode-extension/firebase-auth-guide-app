@@ -1,0 +1,18 @@
+
+li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 850px) {
+
+    body > * > * {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+
+    .hide-on-smaller-screens {
+        display: flex;
+    }
+}

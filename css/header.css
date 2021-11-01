@@ -1,0 +1,42 @@
+
+header {
+    background: var(--white);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--theme-text);
+    font-size: 1.15em;
+    transition: background-color 0.2s ease-in;
+}
+
+nav a:not(.brand-logo) {
+    padding: 30px 10px;
+}
+
+nav a:hover {
+    color: #222222;
+    background: var(--faint);
+}
+
+.hide-on-smaller-screens {
+    display: none;
+}
+
+.brand-logo {
+    display: block;
+    width: 200px;
+    padding: 15px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
