@@ -27,6 +27,10 @@ auth.onAuthStateChanged(user => {
         // Realtime updates: Use onSnapshot (instead of getDocs)
         onSnapshot(q, (snapshot) => {
             setupGuides(snapshot.docs);
+        }, (err) => {
+            console.log(err.message);
+            // modular firebase 9 way of catching error when onSnapshot is still fired, in the case where user is still logged out
+            // Resource: https://pretagteam.com/question/how-to-use-a-catch-in-firebase-onsnapshot
         });
         setupUI(user);
     } else {
@@ -35,7 +39,6 @@ auth.onAuthStateChanged(user => {
         setupGuides([]);
         setupUI(); //leaving it empty evaluates to null/false
     }
-    //NB | TODO: onSnapshot still fires and there's error in the console when user logs out - fix this later.
 });
 
 
