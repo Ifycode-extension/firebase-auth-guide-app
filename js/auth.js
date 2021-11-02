@@ -1,4 +1,6 @@
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './base.js';
+import { db, collection, getDocs, query } from './base.js';
+import { setupGuides } from './index.js';
 import linksWithDataTarget from './modal.js';
 
 let closeModalAndResetForm = (form) => {
@@ -11,6 +13,13 @@ let closeModalAndResetForm = (form) => {
     // Reset form
     form.reset();
 }
+
+//===[ Get firestore data ]===//
+
+const q = query(collection(db, 'guides'));
+const snapshot = await getDocs(q); //use the await keyword
+//console.log(snapshot.docs);
+setupGuides(snapshot.docs);
 
 
 //===[ Authentication starts from here ]===//
