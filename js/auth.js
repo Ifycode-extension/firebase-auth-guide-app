@@ -1,5 +1,5 @@
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './base.js';
-import { db, collection, getDocs, query, addDoc } from './base.js';
+import { db, collection, query, addDoc, onSnapshot } from './base.js';
 import { setupGuides, setupUI } from './index.js';
 import linksWithDataTarget from './modal.js';
 
@@ -19,21 +19,23 @@ let closeModalAndResetForm = (form) => {
 
 
 //listen for auth status changes
-auth.onAuthStateChanged(async (user) => {
+auth.onAuthStateChanged(user => {
     if (user) {
         console.log('User logged in: ', user);
         // Get firestore data if user is logged in
         const q = query(collection(db, 'guides'));
-        const snapshot = await getDocs(q); //use the await keyword
-        //console.log(snapshot.docs);
-        setupGuides(snapshot.docs);
+        // Realtime updates: Use onSnapshot (instead of getDocs)
+        onSnapshot(q, (snapshot) => {
+            setupGuides(snapshot.docs);
+        });
         setupUI(user);
     } else {
-        console.log('User logged out!');
+        console.log('User logged out! user:', user);
         //Use empty array if user is NOT logged in
         setupGuides([]);
         setupUI(); //leaving it empty evaluates to null/false
     }
+    //NB | TODO: onSnapshot still fires and there's error in the console when user logs out - fix this later.
 });
 
 
