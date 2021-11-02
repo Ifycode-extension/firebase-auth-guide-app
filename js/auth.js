@@ -14,22 +14,26 @@ let closeModalAndResetForm = (form) => {
     form.reset();
 }
 
-//===[ Get firestore data ]===//
-
-const q = query(collection(db, 'guides'));
-const snapshot = await getDocs(q); //use the await keyword
-//console.log(snapshot.docs);
-setupGuides(snapshot.docs);
-
 
 //===[ Authentication starts from here ]===//
 
 
 //listen for auth status changes
-auth.onAuthStateChanged(user => {
-    if (user) console.log('User logged in: ', user);
-        else console.log('User looged out!');
+auth.onAuthStateChanged(async (user) => {
+    if (user) {
+        console.log('User logged in: ', user);
+        // Get firestore data if user is logged in
+        const q = query(collection(db, 'guides'));
+        const snapshot = await getDocs(q); //use the await keyword
+        //console.log(snapshot.docs);
+        setupGuides(snapshot.docs);
+    } else {
+        console.log('User logged out!');
+        //Use empty array if user is NOT logged in
+        setupGuides([]);
+    }
 });
+
 
 
 // Sign user up

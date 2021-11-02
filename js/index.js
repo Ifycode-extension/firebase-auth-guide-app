@@ -18,24 +18,27 @@ let expandLists = () => {
 }
 
 export const setupGuides = (data) => {
-    let html = '';
-    data.forEach(doc => {
-        const guide = doc.data();
-        //console.log(guide);
-        const li = `
-        <li>
-            <div>${guide.title}</div>
-            <div class="collapse-body collapse"><span>${guide.content}</span></div>
-        </li>
-        `;
-
-        //Add li elements to html
-        html += li;
-    });
-
-    guidesList.innerHTML = html;
-
-    expandLists();
+    if (data.length) {
+        let html = '';
+        data.forEach(doc => {
+            const guide = doc.data();
+            //console.log(guide);
+            const li = `
+            <li>
+                <div>${guide.title}</div>
+                <div class="collapse-body collapse"><span>${guide.content}</span></div>
+            </li>
+            `;
+    
+            //Add li elements to html
+            html += li;
+        });
+        guidesList.innerHTML = html;
+        expandLists();
+    } else {
+        guidesList.innerHTML = `<h5 class="not-loggedIn">Login to view guides </h5>`;
+    }
+    
 }
 
 document.addEventListener('DOMContentLoaded', () => {

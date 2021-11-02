@@ -23,3 +23,9 @@
     border: 1px solid transparent;
     border-top: 1px solid #eeeeee;
 }
+
+.not-loggedIn {
+    text-align: center;
+    font-size: 1.8em;
+    color: var(--theme-text);
+}
