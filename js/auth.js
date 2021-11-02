@@ -1,6 +1,6 @@
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './base.js';
 import { db, collection, getDocs, query } from './base.js';
-import { setupGuides } from './index.js';
+import { setupGuides, setupUI } from './index.js';
 import linksWithDataTarget from './modal.js';
 
 let closeModalAndResetForm = (form) => {
@@ -27,10 +27,12 @@ auth.onAuthStateChanged(async (user) => {
         const snapshot = await getDocs(q); //use the await keyword
         //console.log(snapshot.docs);
         setupGuides(snapshot.docs);
+        setupUI(user);
     } else {
         console.log('User logged out!');
         //Use empty array if user is NOT logged in
         setupGuides([]);
+        setupUI(); //leaving it empty evaluates to null/false
     }
 });
 

@@ -1,5 +1,19 @@
 const guidesList = document.querySelector('#guides');
+const loggedOutLinks = document.querySelectorAll('.logged-out');
+const loggedInLinks = document.querySelectorAll('.logged-in');
 
+// show or hide menu links depending on if user is logged in or not
+export const setupUI = (user) => {
+    if (user) {
+        loggedInLinks.forEach(link => link.style.display = 'block');
+        loggedOutLinks.forEach(link => link.style.display = 'none');
+    } else {
+        loggedInLinks.forEach(link => link.style.display = 'none');
+        loggedOutLinks.forEach(link => link.style.display = 'block');
+    }
+}
+
+// expand | collapse guides list items (returned from db) on click
 let expandLists = () => {
     //Collapsible list items
     const collapseLists = document.querySelectorAll('#guides > li');
@@ -17,6 +31,7 @@ let expandLists = () => {
     });
 }
 
+// setup guides
 export const setupGuides = (data) => {
     if (data.length) {
         let html = '';
