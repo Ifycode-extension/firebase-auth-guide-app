@@ -1,5 +1,5 @@
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './base.js';
-import { db, collection, getDocs, query } from './base.js';
+import { db, collection, getDocs, query, addDoc } from './base.js';
 import { setupGuides, setupUI } from './index.js';
 import linksWithDataTarget from './modal.js';
 
@@ -37,6 +37,21 @@ auth.onAuthStateChanged(async (user) => {
 });
 
 
+// Create guides
+const createGuidesForm = document.querySelector('#create-form');
+createGuidesForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+        const guidesCollection = collection(db, 'guides');
+        const docRef = await addDoc(guidesCollection, {
+            title: createGuidesForm['title'].value,
+            content: createGuidesForm['content'].value
+        });
+        closeModalAndResetForm(createGuidesForm);
+    } catch(err) {
+        console.log(err.message);
+    }
+});
 
 // Sign user up
 const signupForm = document.querySelector('#signup-form');
