@@ -45,3 +45,15 @@ Install firebase cloud functions (folder and files) in your project:
 ````
 firebase init functions
 ````
+
+### Using cloud functions
+
+Info below is for [tutorial #18 - cloud function/adding claims](https://www.youtube.com/watch?v=4wa3CMK4E2Y&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=18).
+
+Cloud functions is no longer available on firebase free (spark) plan. You need to upgrade to blazer plan to be able to deploy to cloud function.
+
+Add the `addAdminRole` function and content to the functions/index.js file. Next, deploy code in the functions folder to firebase:
+````
+firebase deploy --only functions
+````
+Note: After successful deploy, click on 'functions' tab on firebase to see the addAdminRole is present there.
