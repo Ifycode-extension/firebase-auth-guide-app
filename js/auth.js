@@ -1,5 +1,5 @@
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './base.js';
-import { db, collection, query, addDoc, onSnapshot } from './base.js';
+import { db, collection, query, addDoc, onSnapshot, doc, setDoc } from './base.js';
 import { setupGuides, setupUI } from './index.js';
 import linksWithDataTarget from './modal.js';
 
@@ -67,6 +67,12 @@ signupForm.addEventListener('submit', e => {
 
     createUserWithEmailAndPassword(auth, emailValue, passWordValue).then(cred => {
         //console.log(cred.user);
+        const newUsersRef = doc(db, 'users', cred.user.uid);
+        return setDoc(newUsersRef, { 
+            name: signupForm['signup-name'].value,
+            bio: signupForm['signup-bio'].value 
+        });
+    }).then(() => {
         closeModalAndResetForm(signupForm);
     });
 });

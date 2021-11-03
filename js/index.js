@@ -1,13 +1,20 @@
+import { db, doc, getDoc } from "./base.js";
+
 const guidesList = document.querySelector('#guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const accountDetails = document.querySelector('#account-details');
 
 // show or hide menu links depending on if user is logged in or not
-export const setupUI = (user) => {
+export const setupUI = async (user) => {
     if (user) {
         // display account info
-        const html = `Logged in as ${user.email}`;
+        const usersRef = doc(db, 'users', user.uid);
+        const docSnap = await getDoc(usersRef);
+        const html = `
+        <h2>${docSnap.data().name}</h2>
+        <div>Logged in as ${user.email}</div>
+        <div>Bio: ${docSnap.data().bio}</div>`;
         accountDetails.innerHTML = html;
         // toggle links
         loggedInLinks.forEach(link => link.style.display = 'block');
