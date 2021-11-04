@@ -1,7 +1,21 @@
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './base.js';
 import { db, collection, query, addDoc, onSnapshot, doc, setDoc } from './base.js';
+import { functions, httpsCallable } from './base.js';
 import { setupGuides, setupUI } from './index.js';
 import linksWithDataTarget from './modal.js';
+
+const adminForm = document.querySelector('#admin-form');
+adminForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const adminEmailValue = document.querySelector('#admin-email').value;
+    const addAdminRole = httpsCallable(functions, 'addAdminRole');
+    addAdminRole({ email: adminEmailValue }).then(result => {
+        console.log(result);
+    }).catch(err => {
+        console.log(err);
+    });
+});
+
 
 let closeModalAndResetForm = (form) => {
     // Close modal

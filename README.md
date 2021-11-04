@@ -57,3 +57,7 @@ Add the `addAdminRole` function and content to the functions/index.js file. Next
 firebase deploy --only functions
 ````
 Note: After successful deploy, click on 'functions' tab on firebase to see the addAdminRole is present there.
+
+### Acessing and calling cloud functions in your app with Firebase Modular Web SDK v. 9.0
+
+Resources: [firebase doc](https://firebase.google.com/docs/functions/callable#web-version-9_2) and this [stackoverflow answer](https://stackoverflow.com/a/63255784/15012852).
