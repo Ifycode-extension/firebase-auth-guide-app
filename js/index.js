@@ -35,12 +35,12 @@ let expandLists = () => {
     collapseLists.forEach(list => {
         list.addEventListener('click', () => {
             //toggle class for current list (last div child)
-            list.lastElementChild.classList.toggle('collapse');
+            list.lastElementChild.classList.toggle('hidden');
 
             //close other other lists (last div child) when current list is open
             const otherLists = Array.from(collapseLists).filter(other => { return other !== list });
             otherLists.forEach(other => {
-                other.lastElementChild.classList.add('collapse');
+                other.lastElementChild.classList.add('hidden');
             });
         }, false);
     });
@@ -56,7 +56,7 @@ export const setupGuides = (data) => {
             const li = `
             <li>
                 <div>${guide.title}</div>
-                <div class="collapse-body collapse"><span>${guide.content}</span></div>
+                <div class="collapse-body hidden"><span>${guide.content}</span></div>
             </li>
             `;
     

@@ -1,0 +1,22 @@
+
+.admin-actions {
+    margin: 40px 0; 
+}
+
+.admin-actions form {
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.admin-actions form > * {
+    display: block;
+}
+
+.admin-actions form input {
+    background: var(--theme-bg); /* transparent won't hide label */
+    padding-bottom: 10px;
+}
+
+.admin-actions form button {
+    margin: 0 auto;
+}

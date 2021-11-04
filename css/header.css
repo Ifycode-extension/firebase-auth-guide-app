@@ -32,8 +32,8 @@ nav a:hover {
 
 .brand-logo {
     display: block;
-    width: 200px;
-    padding: 15px 0;
+    width: 180px;
+    padding: 6px 0;
 }
 
 img {
@@ -52,4 +52,11 @@ user is logged in or out
 .logged-in,
 .logged-out {
     display: none;
+}
+
+@media screen and (min-width: 550px) {
+    .brand-logo {
+        width: 200px;
+        padding: 15px 0;
+    }
 }

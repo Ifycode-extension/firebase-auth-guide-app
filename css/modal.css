@@ -1,6 +1,7 @@
 
 .modal-section {
     position: fixed;
+    overflow-y: scroll; /* only needed to see all modals when there's no js manipulation */
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.3);
@@ -32,55 +33,6 @@
     margin-bottom: 20px;
 }
 
-.modal .input-field {
-    position: relative;
-    margin:  0 0 10px 0;
-}
-
-.modal input,
-.modal textarea {
-    width: 100%;
-    border: 1px solid transparent;
-    border-bottom: 1px solid var(--theme-lighttext);
-    padding: 5px;
-    font-size: 1em;
-    color: var(--theme-text);
-}
-
-.modal textarea {
-    font-family: "Nunito Sans", sans-serif;
-}
-
-.btn {
-    background: rgb(255, 207, 75);
-    color: white;
-    font-size: 1em;
-    text-transform: uppercase;
-    padding: 8px 16px;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: bold;
-    border-radius: 2px;
-    margin-top: 8px;
-}
-
-.modal label {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    color: var(--theme-lighttext);
-    cursor: text;
-}
-
-input:focus ~ label,
-input:not(:placeholder-shown) ~ label,
-textarea:focus ~ label,
-textarea:not(:placeholder-shown) ~ label {
-  z-index: -1;
-  /* https://dev.to/piguicorn/labels-as-placeholders-labels-as-placeholders-10ei */
-}
-
-
 @media screen and (min-width: 450px) {
     .modal-content h4 {
         font-size: 2em;
@@ -100,11 +52,6 @@ textarea:not(:placeholder-shown) ~ label {
     .modal-content {
         padding: 30px 0;
     }
-    
-    .btn {
-        font-size: 1.1em;
-        margin-top: 10px;
-    }
 }
 
 @media screen and (min-width: 750px) {
@@ -113,7 +60,7 @@ textarea:not(:placeholder-shown) ~ label {
     }
 }
 
-@media screen and (max-height: 500px) {
+@media screen and (max-height: 500px) { /*height*/
     .modal {
         margin-top: 40px;
     }

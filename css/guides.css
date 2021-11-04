@@ -29,3 +29,10 @@
     font-size: 1.8em;
     color: var(--theme-text);
 }
+
+@media screen and (min-width: 550px) {
+    .brand-logo {
+        width: 200px;
+        padding: 15px 0;
+    }
+}

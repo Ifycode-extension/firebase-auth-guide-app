@@ -6,9 +6,9 @@ import linksWithDataTarget from './modal.js';
 let closeModalAndResetForm = (form) => {
     // Close modal
     const modalSection = document.querySelector('#modal-section');
-    modalSection.classList.add('collapse');
+    modalSection.classList.add('hidden');
     Array.from(linksWithDataTarget).forEach(link => {
-        document.querySelector(`#${link.dataset.target}`).classList.remove('collapse');
+        document.querySelector(`#${link.dataset.target}`).classList.remove('hidden');
     });
     // Reset form
     form.reset();
