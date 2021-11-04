@@ -4,6 +4,7 @@ import { functions, httpsCallable } from './base.js';
 import { setupGuides, setupUI } from './index.js';
 import linksWithDataTarget from './modal.js';
 
+// Access cloud function from your application
 const adminForm = document.querySelector('#admin-form');
 adminForm.addEventListener('submit', async e => {
     e.preventDefault();
@@ -11,11 +12,15 @@ adminForm.addEventListener('submit', async e => {
     const addAdminRole = httpsCallable(functions, 'addAdminRole');
     addAdminRole({ email: adminEmailValue }).then(result => {
         console.log(result);
+        // Reset form too
+        adminForm.reset();
     }).catch(err => {
         console.log(err);
     });
 });
 
+
+// Close modal and reset modal forms
 
 let closeModalAndResetForm = (form) => {
     // Close modal
@@ -36,6 +41,13 @@ let closeModalAndResetForm = (form) => {
 auth.onAuthStateChanged(user => {
     if (user) {
         console.log('User logged in: ', user);
+
+        //get if admin property and boolean value 
+        user.getIdTokenResult().then(idTokenResult => {
+            user.admin = idTokenResult.claims.admin;
+            setupUI(user);
+        });
+
         // Get firestore data if user is logged in
         const q = query(collection(db, 'guides'));
         // Realtime updates: Use onSnapshot (instead of getDocs)
@@ -46,7 +58,6 @@ auth.onAuthStateChanged(user => {
             // modular firebase 9 way of catching error when onSnapshot is still fired, in the case where user is still logged out
             // Resource: https://pretagteam.com/question/how-to-use-a-catch-in-firebase-onsnapshot
         });
-        setupUI(user);
     } else {
         console.log('User logged out! user:', user);
         //Use empty array if user is NOT logged in

@@ -20,3 +20,16 @@
 .admin-actions form button {
     margin: 0 auto;
 }
+
+/*=======================
+div with this class can be 
+found in setupUI function
+in index.js file
+========================*/
+.admin-badge {
+    color: white;
+    background: black;
+    width: max-content;
+    padding: 3px 10px;
+    border-radius: 10px;
+}

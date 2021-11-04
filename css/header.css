@@ -50,7 +50,8 @@ later on depending on if
 user is logged in or out 
 =====================*/
 .logged-in,
-.logged-out {
+.logged-out,
+.admin {
     display: none;
 }
 

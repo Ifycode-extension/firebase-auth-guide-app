@@ -4,22 +4,31 @@ const guidesList = document.querySelector('#guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const accountDetails = document.querySelector('#account-details');
+const adminItems = document.querySelectorAll('.admin');
 
 // show or hide menu links depending on if user is logged in or not
 export const setupUI = async (user) => {
     if (user) {
-        // display account info
+        //Display these only if user is admin
+        if (user.admin) {
+            adminItems.forEach(item => item.style.display = 'block');
+        }
+        // display account info (all users)
         const usersRef = doc(db, 'users', user.uid);
         const docSnap = await getDoc(usersRef);
         const html = `
         <h2>${docSnap.data().name}</h2>
         <div>Logged in as ${user.email}</div>
-        <div>Bio: ${docSnap.data().bio}</div>`;
+        <div>Bio: ${docSnap.data().bio}</div>
+        <div class='${user.admin ? 'admin-badge' : ''}'><b>${user.admin ? 'Admin' : ''}</b></div>
+        `;
         accountDetails.innerHTML = html;
         // toggle links
         loggedInLinks.forEach(link => link.style.display = 'block');
         loggedOutLinks.forEach(link => link.style.display = 'none');
     } else {
+        //hide admin items
+        adminItems.forEach(item => item.style.display = 'none');
         //hide account info
         accountDetails.innerHTML = '';
         // toggle links
