@@ -21,7 +21,6 @@ adminForm.addEventListener('submit', async e => {
 
 
 // Close modal and reset modal forms
-
 let closeModalAndResetForm = (form) => {
     // Close modal
     const modalSection = document.querySelector('#modal-section');
@@ -55,8 +54,6 @@ auth.onAuthStateChanged(user => {
             setupGuides(snapshot.docs);
         }, (err) => {
             console.log(err.message);
-            // modular firebase 9 way of catching error when onSnapshot is still fired, in the case where user is still logged out
-            // Resource: https://pretagteam.com/question/how-to-use-a-catch-in-firebase-onsnapshot
         });
     } else {
         console.log('User logged out! user:', user);

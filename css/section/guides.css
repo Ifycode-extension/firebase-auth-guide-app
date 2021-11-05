@@ -1,8 +1,4 @@
 
-.container {
-    margin-top: 40px;
-}
-
 .container li {
     background: var(--white);
     color: var(--theme-text);
@@ -18,21 +14,16 @@
     font-size: 1.15em;
 }
 
-.collapse-body {
+.collapsible-container {
+    user-select: none; /* standard syntax */
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+.collapsible-body {
     font-size: 1em;
     border: 1px solid transparent;
     border-top: 1px solid #eeeeee;
-}
-
-.not-loggedIn {
-    text-align: center;
-    font-size: 1.8em;
-    color: var(--theme-text);
-}
-
-@media screen and (min-width: 550px) {
-    .brand-logo {
-        width: 200px;
-        padding: 15px 0;
-    }
 }

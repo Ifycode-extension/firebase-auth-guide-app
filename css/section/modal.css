@@ -1,0 +1,13 @@
+
+.modal-section {
+    position: fixed;
+    overflow-y: scroll; /* only needed to see all modals when there's no js manipulation */
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0; /* important */
+    z-index: 8888; /* important */
+}
+
+/* css for modal component(s) in reusable/modal.css file */

@@ -1,4 +1,4 @@
-import { db, doc, getDoc } from "./base.js";
+import { db, doc, getDoc } from './base.js';
 
 const guidesList = document.querySelector('#guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
@@ -40,14 +40,14 @@ export const setupUI = async (user) => {
 // expand | collapse guides list items (returned from db) on click
 let expandLists = () => {
     //Collapsible list items
-    const collapseLists = document.querySelectorAll('#guides > li');
-    collapseLists.forEach(list => {
+    const collapsibleLists = document.querySelectorAll('#guides > li');
+    collapsibleLists.forEach(list => {
         list.addEventListener('click', () => {
             //toggle class for current list (last div child)
             list.lastElementChild.classList.toggle('hidden');
 
             //close other other lists (last div child) when current list is open
-            const otherLists = Array.from(collapseLists).filter(other => { return other !== list });
+            const otherLists = Array.from(collapsibleLists).filter(other => { return other !== list });
             otherLists.forEach(other => {
                 other.lastElementChild.classList.add('hidden');
             });
@@ -65,7 +65,7 @@ export const setupGuides = (data) => {
             const li = `
             <li>
                 <div>${guide.title}</div>
-                <div class="collapse-body hidden"><span>${guide.content}</span></div>
+                <div class="collapsible-body hidden"><span>${guide.content}</span></div>
             </li>
             `;
     

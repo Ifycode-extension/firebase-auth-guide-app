@@ -1,4 +1,6 @@
 
+// Manipulating modal-section and modal components
+
 const modalSection = document.querySelector('#modal-section');
 const navLinks = document.querySelectorAll('header li > a');
 const linksWithDataTarget = Array.from(navLinks).filter(link => { return link.dataset.target !== undefined });
@@ -8,7 +10,7 @@ linksWithDataTarget.forEach(link => {
         // Open modal-section when nav links are clicked on
         modalSection.classList.remove('hidden');
 
-        // Hide all other forms not needed yet
+        // Hide all other modal components not needed yet
         const otherDataTargetLinks = Array.from(linksWithDataTarget).filter(others => { return others !== link });
         otherDataTargetLinks.forEach(other => {
             document.querySelector(`#${other.dataset.target}`).classList.add('hidden');

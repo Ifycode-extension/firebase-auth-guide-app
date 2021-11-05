@@ -1,0 +1,19 @@
+
+.not-loggedIn {
+    text-align: center;
+    font-size: 1.8em;
+    color: var(--theme-text);
+}
+
+/* ====================
+set all lists to display 
+none on page load. To be
+changed with javascript
+in index.js and auth.js
+later on depending on if 
+user is logged in or out 
+=====================*/
+.logged-in,
+.logged-out {
+    display: none;
+}

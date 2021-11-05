@@ -1,8 +1,4 @@
 
-.admin-actions {
-    margin: 40px 0; 
-}
-
 .admin-actions form {
     margin: 0 auto;
     max-width: 300px;
@@ -15,10 +11,23 @@
 .admin-actions form input {
     background: var(--theme-bg); /* transparent won't hide label */
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .admin-actions form button {
     margin: 0 auto;
+}
+
+/* ====================
+set admin list to display 
+none on page load. To be
+changed with javascript
+in index.js and auth.js
+later on depending on if 
+user is logged in or out 
+=====================*/
+.admin {
+    display: none;
 }
 
 /*=======================

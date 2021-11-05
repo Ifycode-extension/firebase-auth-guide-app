@@ -1,16 +1,6 @@
-
-.modal-section {
-    position: fixed;
-    overflow-y: scroll; /* only needed to see all modals when there's no js manipulation */
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.3);
-    top: 0; /* important */
-    z-index: 8888; /* important */
-}
+/* css for modal-section in section/modal.css file */
 
 .modal {
-    /*width: max-content;*/
     background: var(--white);
     width: 90%;
     max-width: unset;
@@ -31,11 +21,6 @@
     font-size: 1.75em;
     color: var(--theme-text);
     margin-bottom: 20px;
-}
-
-.error {
-    color: red;
-    font-weight: bold;
 }
 
 @media screen and (min-width: 450px) {
@@ -65,7 +50,7 @@
     }
 }
 
-@media screen and (max-height: 500px) { /*height*/
+@media screen and (max-height: 500px) { /* max height */
     .modal {
         margin-top: 40px;
     }

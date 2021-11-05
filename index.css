@@ -1,9 +1,27 @@
 
+/* Base + reset styles */
 @import './css/base.css';
-@import './css/header.css';
-@import './css/guides.css';
-@import './css/modal.css';
-@import './css/common.css';
-@import './css/admin.css';
 
-@import './css/helpers.css';
+/* Common styles */
+@import './css/common.css';
+
+/* Section css code */
+@import './css/section/header.css';
+@import './css/section/modal.css';
+@import './css/section/guides.css';
+
+/* Reusable css code */
+@import './css/reusable/button.css';
+@import './css/reusable/input-group.css';
+@import './css/reusable/modal.css';
+
+/* User role css code */
+@import './css/user-role/admin.css';
+@import './css/user-role/other.css';
+
+/* helper css code */
+@import './css/helper.css';
+
+/* error css code */
+@import './css/error.css';
+

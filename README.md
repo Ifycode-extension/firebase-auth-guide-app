@@ -73,3 +73,8 @@ Note: After successful deploy, click on 'functions' tab on firebase to see the a
 Resources: [firebase doc](https://firebase.google.com/docs/functions/callable#web-version-9_2) and this [stackoverflow answer](https://stackoverflow.com/a/63255784/15012852).
 
 Note: don't forget to always deploy your functions to firebase when ever you make a change to the firebase functions inside the functions folder.
+
+<!--
+ // modular firebase 9 way of catching error when onSnapshot is still fired, in the case where user is still logged out
+ // Resource: https://pretagteam.com/question/how-to-use-a-catch-in-firebase-onsnapshot
+-->

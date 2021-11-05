@@ -3,75 +3,19 @@ body > * > * {
     margin: 0 auto;
 }
 
+body > section {
+    margin: 40px 0;
+}
+
 li {
     list-style-type: none;
     cursor: pointer;
 }
 
-.btn {
-    background: rgb(255, 207, 75);
-    color: white;
-    font-size: 1em;
-    text-transform: uppercase;
-    padding: 8px 16px;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: bold;
-    border-radius: 2px;
-    margin-top: 8px;
-}
-
-
-.input-field {
-    position: relative;
-    margin:  0 0 10px 0;
-}
-
-input,
-textarea {
-    width: 100%;
-    border: 1px solid transparent;
-    border-bottom: 1px solid var(--theme-lighttext);
-    padding: 5px;
-    font-size: 1em;
-    color: var(--theme-text);
-}
-
-textarea {
-    font-family: "Nunito Sans", sans-serif;
-}
-
-label {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    color: var(--theme-lighttext);
-    cursor: text;
-}
-
-input:focus ~ label,
-input:not(:placeholder-shown) ~ label,
-textarea:focus ~ label,
-textarea:not(:placeholder-shown) ~ label {
-  z-index: -1;
-  /* https://dev.to/piguicorn/labels-as-placeholders-labels-as-placeholders-10ei */
-}
-
-
-@media screen and (min-width: 550px) { 
-    .btn {
-        font-size: 1.1em;
-        margin-top: 10px;
-    }
-}
 
 @media screen and (min-width: 850px) {
     body > * > * {
         max-width: 88%;
-    }
-
-    .hide-on-smaller-screens {
-        display: flex;
     }
 }
 

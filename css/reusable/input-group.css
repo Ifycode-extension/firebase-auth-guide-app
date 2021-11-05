@@ -1,0 +1,35 @@
+.input-field {
+    position: relative;
+    margin:  0 0 10px 0;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--theme-lighttext);
+    padding: 5px;
+    font-size: 1em;
+    color: var(--theme-text);
+}
+
+textarea {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    color: var(--theme-lighttext);
+    cursor: text;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label,
+textarea:focus ~ label,
+textarea:not(:placeholder-shown) ~ label {
+  z-index: -1;
+  /* https://dev.to/piguicorn/labels-as-placeholders-labels-as-placeholders-10ei */
+}
