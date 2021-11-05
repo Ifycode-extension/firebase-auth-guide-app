@@ -71,3 +71,5 @@ Note: After successful deploy, click on 'functions' tab on firebase to see the a
 ### Acessing and calling cloud functions in your app with Firebase Modular Web SDK v. 9.0
 
 Resources: [firebase doc](https://firebase.google.com/docs/functions/callable#web-version-9_2) and this [stackoverflow answer](https://stackoverflow.com/a/63255784/15012852).
+
+Note: don't forget to always deploy your functions to firebase when ever you make a change to the firebase functions inside the functions folder.
