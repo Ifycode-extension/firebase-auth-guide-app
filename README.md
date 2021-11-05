@@ -27,6 +27,16 @@ service cloud.firestore {
 }
 ````
 
+Rules for guides change so that only admins can write to guides in [tutorial 21 - Firestore rules for claims](https://www.youtube.com/watch?v=C87Un2rIm2g&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=21). Change guide rules to:
+
+````
+//match docs in the guides collection, and allow access if user exists
+match /guides/{guideId} {
+  allow read: if request.auth.uid != null;
+	allow write: if request.auth.token.admin == true;
+}
+````
+
 ### Custom claims and cloud functions
 
 Commands from [Tutorial #17 - Intro to custom claims](https://www.youtube.com/watch?v=SSiLsIkPQWs&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=17) to be able to use firebase cloud functions:
