@@ -99,6 +99,9 @@ signupForm.addEventListener('submit', e => {
         });
     }).then(() => {
         closeModalAndResetForm(signupForm);
+        signupForm.querySelector('.error').innerHTML = '';
+    }).catch(err => {
+        signupForm.querySelector('.error').innerHTML = err.message;
     });
 });
 
@@ -123,5 +126,8 @@ loginForm.addEventListener('submit', e => {
     signInWithEmailAndPassword(auth, emailValue, passWordValue).then(cred => {
         //console.log(cred.user);
         closeModalAndResetForm(loginForm);
+        loginForm.querySelector('.error').innerHTML = '';
+    }).catch(err => {
+        loginForm.querySelector('.error').innerHTML = err.message;
     });
 });
