@@ -1,25 +1,25 @@
 
-.container li {
-    background: var(--white);
-    color: var(--theme-text);
-    margin: 0 0 2px 0;
-    box-shadow: 1px 1px 3px var(--shadow);
-}
-
-.container li > * {
-    padding: 10px;
-}
-
-.container li > div:nth-child(1){
-    font-size: 1.15em;
-}
-
 .collapsible-container {
     user-select: none; /* standard syntax */
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
     -moz-user-select: none; /* mozilla browsers */
     -khtml-user-select: none; /* webkit (konqueror) browsers */
     -ms-user-select: none; /* IE10+ */
+}
+
+.collapsible-container li {
+    background: var(--white);
+    color: var(--theme-text);
+    margin: 0 0 2px 0;
+    box-shadow: 1px 1px 3px var(--shadow);
+}
+
+.collapsible-container li > * {
+    padding: 10px;
+}
+
+.collapsible-container li > div:nth-child(1){
+    font-size: 1.15em;
 }
 
 .collapsible-body {

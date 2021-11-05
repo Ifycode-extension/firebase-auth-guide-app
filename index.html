@@ -33,17 +33,6 @@
         </nav>
     </header>
 
-    <section class="admin-actions admin">
-        <!-- ADMIN ACTIONS -->
-        <form id="admin-form">
-            <div class="input-field">
-                <input type="email" placeholder=" " id="admin-email" required />
-                <label for="admin-email">User email</label>
-            </div>
-            <button class="btn">Make admin</button>
-        </form>
-    </section>
-
     <section id="modal-section" class="modal-section hidden">
         <!-- SIGN UP MODAL -->
         <div id="modal-signup" class="modal">
@@ -118,13 +107,22 @@
         </div>
     </section>
 
+    <section class="admin-actions admin">
+        <!-- ADMIN ACTIONS -->
+        <form id="admin-form">
+            <div class="input-field">
+                <input type="email" placeholder=" " id="admin-email" required />
+                <label for="admin-email">User email</label>
+            </div>
+            <button class="btn">Make admin</button>
+        </form>
+    </section>
+
     <section class="guide-list">
         <!-- GUIDE LIST -->
-        <div class="container">
-            <ul id="guides" class="collapsible-container">
-                <!-- Return lists with content from firebase here -->
-            </ul>
-        </div>
+        <ul id="guides" class="collapsible-container">
+            <!-- Return lists with content from firebase here -->
+        </ul>
     </section>
 
     <!-- App scripts: make them type module to avoid errors -->
