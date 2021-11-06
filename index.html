@@ -9,28 +9,31 @@
 </head>
 <body>
     <header>
-        <nav>
+        <div class="contain header-container">
             <a href="#" class="brand-logo">
                 <img src="./img/logo.svg" alt="games guide logo">
             </a>
-            <ul class="hide-on-smaller-screens">
-                <li class="logged-in">
-                    <a href="#" data-target="modal-account">Account</a>
-                </li>
-                <li class="logged-in">
-                    <a href="#" id="logout">Logout</a>
-                </li>
-                <li class="admin">
-                    <a href="#" data-target="modal-create">Create Guide</a>
-                </li>
-                <li class="logged-out">
-                    <a href="#" data-target="modal-login">Login</a>
-                </li>
-                <li class="logged-out">
-                    <a href="#" data-target="modal-signup">Sign Up</a>
-                </li>
-            </ul>
-        </nav>
+            <button class="hide-on-larger-screens btn">Menu</button>
+            <nav>
+                <ul class="hide-on-smaller-screens menu-container">
+                    <li class="logged-in">
+                        <a href="#" data-target="modal-account">Account</a>
+                    </li>
+                    <li class="logged-in">
+                        <a href="#" id="logout">Logout</a>
+                    </li>
+                    <li class="admin">
+                        <a href="#" data-target="modal-create">Create Guide</a>
+                    </li>
+                    <li class="logged-out">
+                        <a href="#" data-target="modal-login">Login</a>
+                    </li>
+                    <li class="logged-out">
+                        <a href="#" data-target="modal-signup">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="modal-section" class="modal-section hidden">
@@ -120,7 +123,7 @@
 
     <section class="guide-list">
         <!-- GUIDE LIST -->
-        <ul id="guides" class="collapsible-container">
+        <ul id="guides" class="contain collapsible-container">
             <!-- Return lists with content from firebase here -->
         </ul>
     </section>

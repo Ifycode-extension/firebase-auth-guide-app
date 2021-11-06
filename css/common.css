@@ -1,4 +1,4 @@
-body > * > * {
+body .contain {
     max-width: 95%;
     margin: 0 auto;
 }
@@ -14,13 +14,13 @@ li {
 
 
 @media screen and (min-width: 850px) {
-    body > * > * {
+    body .contain {
         max-width: 88%;
     }
 }
 
 @media screen and (min-width: 1400px) {
-    body > * > * {
+    body .contain {
         max-width: 1250px;
     }
 }

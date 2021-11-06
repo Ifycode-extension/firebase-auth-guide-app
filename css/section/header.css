@@ -3,31 +3,25 @@ header {
     background: var(--white);
 }
 
-nav {
+header .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav a {
+header a {
     display: block;
     text-decoration: none;
     color: var(--theme-text);
     font-size: 1.15em;
-    transition: background-color 0.2s ease-in;
 }
 
-nav a:not(.brand-logo) {
+header a:not(.brand-logo) {
     padding: 30px 10px;
 }
 
-nav a:hover {
-    color: #222222;
-    background: var(--faint);
-}
-
-.hide-on-smaller-screens {
-    display: none;
+header .btn {
+    margin: 0;
 }
 
 .brand-logo {
@@ -36,9 +30,57 @@ nav a:hover {
     padding: 6px 0;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.brand-logo,
+header nav li,
+header nav a {
+    transition: background-color 0.2s ease-in;
+}
+
+.brand-logo:hover,
+.brand-logo:focus,
+header nav a:focus,
+header nav li:hover {
+    color: #222222;
+    background: var(--faint);
+}
+
+.brand-logo:focus,
+header nav a:focus {
+    outline: none;
+}
+
+.hide-on-smaller-screens {
+    display: flex; /**/
+   
+}
+
+.hide-on-larger-screens {
+    display: block;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    background: var(--fixed-container-bg);
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.menu-container {
+    flex-direction: column;
+    background: var(--white);
+    height: inherit;
+    max-width: 250px;
+    margin: 0 0 0 auto;
+}
+
+@media screen and (min-width: 450px) {
+    .menu-container {
+        max-width: 280px;
+    }
 }
 
 @media screen and (min-width: 550px) {
@@ -51,5 +93,25 @@ img {
 @media screen and (min-width: 850px) {
     .hide-on-smaller-screens {
         display: flex;
+    }
+
+    .hide-on-larger-screens {
+        display: none;
+    }
+
+    nav {
+        position: static;
+        right: unset;
+        top: unset;
+        z-index: inherit;
+        background: transparent;
+        width: unset;
+        height: unset;
+    }
+
+    .menu-container {
+        flex-direction: row;
+        background: transparent;
+        max-width: unset;
     }
 }

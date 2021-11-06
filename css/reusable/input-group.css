@@ -11,6 +11,15 @@ textarea {
     padding: 5px;
     font-size: 1em;
     color: var(--theme-text);
+    transition: border 0.1s linear;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid var(--theme-lighttext);
+    box-shadow: 1px 1px 10px var(--shadow);
+    border-radius: 3px;
+    outline: none;
 }
 
 textarea {

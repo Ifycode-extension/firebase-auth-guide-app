@@ -19,8 +19,8 @@
 @import './css/user-role/admin.css';
 @import './css/user-role/other.css';
 
-/* helper css code */
-@import './css/helper.css';
+/* js-helper css code */
+@import './css/js-helper.css';
 
 /* error css code */
 @import './css/error.css';

@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     margin: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--fixed-container-bg);
     top: 0; /* important */
     z-index: 8888; /* important */
 }

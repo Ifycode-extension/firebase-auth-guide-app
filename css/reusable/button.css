@@ -7,8 +7,17 @@
     padding: 8px 16px;
     font-family: "Nunito Sans", sans-serif;
     font-weight: bold;
+    border: 2px solid transparent;
     border-radius: 2px;
     margin-top: 8px;
+    transition: border 0.2s ease-in;
+}
+
+.btn:hover,
+.btn:focus {
+    border: 2px solid var(--theme-lighttext);
+    box-shadow: 1px 1px 10px var(--shadow);
+    outline: none;
 }
 
 @media screen and (min-width: 550px) { 
