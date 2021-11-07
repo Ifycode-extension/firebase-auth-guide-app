@@ -13,9 +13,10 @@
             <a href="#" class="brand-logo">
                 <img src="./img/logo.svg" alt="games guide logo">
             </a>
-            <button class="hide-on-larger-screens btn">Menu</button>
-            <nav>
-                <ul class="hide-on-smaller-screens menu-container">
+            <button class="menu-btn show-on-ss btn">Menu</button>
+            <nav id="nav" class="nav nav-hide nav-show">
+                <ul class="hide-ss menu-container">
+                    <button class="menu-btn show-on-ss btn">Menu</button>
                     <li class="logged-in">
                         <a href="#" data-target="modal-account">Account</a>
                     </li>
@@ -131,6 +132,7 @@
     <!-- App scripts: make them type module to avoid errors -->
     <script type="module" src="./js/index.js"></script>
     <script type="module" src="./js/modal.js"></script>
+    <script type="module" src="./js/nav.js"></script>
 
     <!-- Firebase and auth scripts -->
     <script type="module" src="./js/base.js"></script>

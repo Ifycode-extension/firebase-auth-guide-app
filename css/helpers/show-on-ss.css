@@ -1,0 +1,14 @@
+
+/*========================================
+show-on-ss means "show on smaller screens" 
+========================================*/
+
+.show-on-ss {
+    display: block;
+}
+
+@media screen and (min-width: 850px) {
+    .show-on-ss {
+        display: none;
+    }
+}

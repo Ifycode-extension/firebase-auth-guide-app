@@ -1,0 +1,19 @@
+
+/*=====================
+Apply both nav-hide and 
+nav-show on nav element.
+Use javascript to add or
+remove only nav-hide, so
+that the effect will only
+be on smaller screens
+=======================*/
+
+.nav-hide {
+    display: none;
+}
+
+@media screen and (min-width: 850px) {
+    .nav-show {
+        display: block;
+    } 
+}
