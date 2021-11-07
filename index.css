@@ -18,13 +18,15 @@
 @import './css/user-role/admin.css';
 @import './css/user-role/other.css';
 
-/* helper js and css code */
-@import './css/helpers/hidden.css';
+/* helper css code */
 @import './css/helpers/header.css';
 @import './css/helpers/nav.css';
 @import './css/helpers/navlinks.css';
-@import './css/helpers/navjs.css';
 @import './css/helpers/show-on-ss.css';
+
+/* helper js code */
+@import './css/helpers/hidden.css';
+@import './css/helpers/navjs.css';
 
 /* error css code */
 @import './css/error.css';

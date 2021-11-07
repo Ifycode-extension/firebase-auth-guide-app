@@ -1,4 +1,24 @@
 
 .nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--theme-text);
+    font-size: 1.15em;
+
     padding: 30px 10px;
+    margin: 1px 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+
+.nav a {
+    transition: background-color 0.2s ease-in;
+}
+
+.nav a:focus, 
+.nav a:hover {
+    color: #222222;
+    background: var(--faint);
+    outline: none;
+    border: 1px solid var(--theme-lighttext);
 }

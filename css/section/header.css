@@ -3,40 +3,26 @@ header {
     background: var(--white);
 }
 
-header a {
-    display: block;
-    text-decoration: none;
-    color: var(--theme-text);
-    font-size: 1.15em;
-}
-
-header .btn {
-    margin: 0;
-}
-
 .brand-logo {
     display: block;
     width: 180px;
+
     padding: 6px 0;
+    margin: 1px 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
 }
 
-.brand-logo,
-header nav li,
-header nav a {
+.brand-logo {
     transition: background-color 0.2s ease-in;
 }
 
 .brand-logo:hover,
-.brand-logo:focus,
-header nav a:focus,
-header nav li:hover {
+.brand-logo:focus {
     color: #222222;
     background: var(--faint);
-}
-
-.brand-logo:focus,
-header nav a:focus {
     outline: none;
+    border: 1px solid var(--theme-lighttext);
 }
 
 @media screen and (min-width: 550px) {
