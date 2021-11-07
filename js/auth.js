@@ -38,6 +38,16 @@ let closeModalAndResetForm = (form) => {
 
 //listen for auth status changes
 auth.onAuthStateChanged(user => {
+
+     // Get firestore data whether user is logged in or not
+     const q = query(collection(db, 'guides'));
+     // Realtime updates: Use onSnapshot (instead of getDocs)
+     onSnapshot(q, (snapshot) => {
+         setupGuides(snapshot.docs);
+     }, (err) => {
+         console.log(err.message);
+     });
+
     if (user) {
         console.log('User logged in: ', user);
 
@@ -47,7 +57,8 @@ auth.onAuthStateChanged(user => {
             setupUI(user);
         });
 
-        // Get firestore data if user is logged in
+        /*
+        // Get firestore data only if user is logged in
         const q = query(collection(db, 'guides'));
         // Realtime updates: Use onSnapshot (instead of getDocs)
         onSnapshot(q, (snapshot) => {
@@ -55,10 +66,12 @@ auth.onAuthStateChanged(user => {
         }, (err) => {
             console.log(err.message);
         });
+        */
     } else {
         console.log('User logged out! user:', user);
+        
         //Use empty array if user is NOT logged in
-        setupGuides([]);
+        //setupGuides([]);
         setupUI(); //leaving it empty evaluates to null/false
     }
 });

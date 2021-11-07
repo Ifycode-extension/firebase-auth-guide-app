@@ -1,4 +1,14 @@
 
+.app-description {
+    font-size: 1.1em;
+    padding: 10px;
+    border: 1px solid var(--shadow);
+}
+
+
+
+
+
 .collapsible-container {
     user-select: none; /* standard syntax */
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */

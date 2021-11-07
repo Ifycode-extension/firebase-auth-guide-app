@@ -1,10 +1,4 @@
 
-.not-loggedIn {
-    text-align: center;
-    font-size: 1.8em;
-    color: var(--theme-text);
-}
-
 /* ====================
 set all lists to display 
 none on page load. To be
@@ -14,6 +8,16 @@ later on depending on if
 user is logged in or out 
 =====================*/
 .logged-in,
-.logged-out {
+.logged-out,
+.logged-in-out {
     display: none;
 }
+
+
+/* //for guideList in js
+.not-loggedIn {
+    text-align: center;
+    font-size: 1.8em;
+    color: var(--theme-text);
+}
+*/

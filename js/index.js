@@ -3,16 +3,29 @@ import { db, doc, getDoc } from './base.js';
 const guidesList = document.querySelector('#guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
+const loggedInOuTLinks = document.querySelectorAll('.logged-in-out');
 const accountDetails = document.querySelector('#account-details');
 const adminItems = document.querySelectorAll('.admin');
+const description = document.querySelector('#description');
 
 // show or hide menu links depending on if user is logged in or not
 export const setupUI = async (user) => {
     if (user) {
-        //Display these only if user is admin
+        // Display these only if user is admin
         if (user.admin) {
-            adminItems.forEach(item => item.style.display = 'block');
+            description.classList.add('hidden');
+            adminItems.forEach(item => item.classList.add('show-block'));
         }
+
+        // If not admin
+        if (!user.admin) {
+            description.classList.remove('hidden');
+        }
+
+        // toggle links
+        loggedInOuTLinks.forEach(link => link.classList.add('show-block'));
+        loggedInLinks.forEach(link => link.classList.add('show-block'));
+        loggedOutLinks.forEach(link => link.classList.remove('show-block'));
         // display account info (all users)
         const usersRef = doc(db, 'users', user.uid);
         const docSnap = await getDoc(usersRef);
@@ -23,17 +36,16 @@ export const setupUI = async (user) => {
         <div class='${user.admin ? 'admin-badge' : ''}'><b>${user.admin ? 'Admin' : ''}</b></div>
         `;
         accountDetails.innerHTML = html;
-        // toggle links
-        loggedInLinks.forEach(link => link.style.display = 'block');
-        loggedOutLinks.forEach(link => link.style.display = 'none');
     } else {
+        description.classList.remove('hidden');
+        // toggle links
+        loggedInOuTLinks.forEach(link => link.classList.add('show-block'));
+        loggedInLinks.forEach(link => link.classList.remove('show-block'));
+        loggedOutLinks.forEach(link => link.classList.add('show-block'));
         //hide admin items
-        adminItems.forEach(item => item.style.display = 'none');
+        adminItems.forEach(item => item.classList.remove('show-block'));
         //hide account info
         accountDetails.innerHTML = '';
-        // toggle links
-        loggedInLinks.forEach(link => link.style.display = 'none');
-        loggedOutLinks.forEach(link => link.style.display = 'block');
     }
 }
 
@@ -74,9 +86,9 @@ export const setupGuides = (data) => {
         });
         guidesList.innerHTML = html;
         expandLists();
-    } else {
+    } /*else {
         guidesList.innerHTML = `<h5 class="not-loggedIn">Login to view guides </h5>`;
-    }
+    }*/
     
 }
 
