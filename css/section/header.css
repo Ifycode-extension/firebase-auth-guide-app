@@ -3,21 +3,11 @@ header {
     background: var(--white);
 }
 
-header .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 header a {
     display: block;
     text-decoration: none;
     color: var(--theme-text);
     font-size: 1.15em;
-}
-
-header a:not(.brand-logo) {
-    padding: 30px 10px;
 }
 
 header .btn {

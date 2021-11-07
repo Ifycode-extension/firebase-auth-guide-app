@@ -1,13 +1,13 @@
 
-// Manipulating modal-section and modal components
+// Manipulating modal-conatiner and modal components
 
-const modalSection = document.querySelector('#modal-section');
+const modalSection = document.querySelector('#modal-conatiner');
 const navLinks = document.querySelectorAll('header li > a');
 const linksWithDataTarget = Array.from(navLinks).filter(link => { return link.dataset.target !== undefined });
 linksWithDataTarget.forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
-        // Open modal-section when nav links are clicked on
+        // Open modal-conatiner when nav links are clicked on
         modalSection.classList.remove('hidden');
 
         // Hide all other modal components not needed yet

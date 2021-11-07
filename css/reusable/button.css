@@ -9,7 +9,6 @@
     font-weight: bold;
     border: 2px solid transparent;
     border-radius: 2px;
-    margin-top: 8px;
     transition: border 0.2s ease-in;
 }
 
@@ -20,9 +19,31 @@
     outline: none;
 }
 
+
+/*========================================
+ specific .btn style for specific sections
+ =======================================*/
+.nav .btn {
+    width: max-content;
+    margin: 10px 10px 10px auto;
+}
+
+.modal .btn {
+    margin-top: 8px;
+}
+/*======================================*/
+
+
 @media screen and (min-width: 550px) { 
     .btn {
         font-size: 1.1em;
+    }
+
+    /*========================================
+    specific .btn style for specific sections
+    =======================================*/
+    .modal .btn {
         margin-top: 10px;
     }
+    /*======================================*/
 }

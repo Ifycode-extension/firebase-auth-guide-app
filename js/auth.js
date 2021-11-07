@@ -23,7 +23,7 @@ adminForm.addEventListener('submit', async e => {
 // Close modal and reset modal forms
 let closeModalAndResetForm = (form) => {
     // Close modal
-    const modalSection = document.querySelector('#modal-section');
+    const modalSection = document.querySelector('#modal-conatiner');
     modalSection.classList.add('hidden');
     Array.from(linksWithDataTarget).forEach(link => {
         document.querySelector(`#${link.dataset.target}`).classList.remove('hidden');

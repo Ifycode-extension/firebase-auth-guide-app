@@ -7,7 +7,6 @@
 
 /* Section css code */
 @import './css/section/header.css';
-@import './css/section/modal.css';
 @import './css/section/guides.css';
 
 /* Reusable css code */
@@ -21,8 +20,10 @@
 
 /* helper js and css code */
 @import './css/helpers/hidden.css';
+@import './css/helpers/header.css';
 @import './css/helpers/nav.css';
-@import './css/helpers/nav-js.css';
+@import './css/helpers/navlinks.css';
+@import './css/helpers/navjs.css';
 @import './css/helpers/show-on-ss.css';
 
 /* error css code */

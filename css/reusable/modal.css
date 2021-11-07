@@ -1,4 +1,14 @@
-/* css for modal-section in section/modal.css file */
+
+.modal-conatiner {
+    position: fixed;
+    overflow-y: scroll; /* only needed to see all modals when there's no js manipulation */
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: var(--fixed-container-bg);
+    top: 0; /* important */
+    z-index: 8888; /* important */
+}
 
 .modal {
     background: var(--white);
