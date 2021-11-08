@@ -1,8 +1,20 @@
 ## (Firebase) auth guide app
 
+### Simulating .env file in nodejs with env.js
+This goes inside the env.js file, and imported into base.js:
+````
+const env = {
+    APIKEY: "apikey-here",
+    AUTHDOMAIN: "authdomain-here",
+    PROJECTID: "projectid-here"
+};
+
+export default env;
+````
+
 ### Firestore database rules
 
-Addind a reference here in the readme instead of always having to go to firebase to get this. Copy and paste this and modify as needed in subsequent projects:
+Adding a reference here in the readme instead of always having to go to firebase to get this. Copy and paste this and modify as needed in subsequent projects:
 
 ````
 rules_version = '2';
@@ -40,10 +52,9 @@ match /guides/{guideId} {
 In the end, I changed the rules for guides so that everyone (user or not) can read the collapsible lists: 
 
 ````
-//match docs in the guides collection, and allow access if user exists
+//match docs in the guides collection. Allow read access to anyone, but write access to admin only
 match /guides/{guideId} {
-  //allow read: if request.auth.uid != null;
-  allow read: if request.time < timestamp.date(2021, 11, 30);
+  allow read,
 	allow write: if request.auth.token.admin == true;
 }
 ````
