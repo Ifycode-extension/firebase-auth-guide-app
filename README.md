@@ -37,6 +37,17 @@ match /guides/{guideId} {
 }
 ````
 
+In the end, I changed the rules for guides so that everyone (user or not) can read the collapsible lists: 
+
+````
+//match docs in the guides collection, and allow access if user exists
+match /guides/{guideId} {
+  //allow read: if request.auth.uid != null;
+  allow read: if request.time < timestamp.date(2021, 11, 30);
+	allow write: if request.auth.token.admin == true;
+}
+````
+
 ### Custom claims and cloud functions
 
 Commands from [Tutorial #17 - Intro to custom claims](https://www.youtube.com/watch?v=SSiLsIkPQWs&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=17) to be able to use firebase cloud functions:
