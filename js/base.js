@@ -3,10 +3,12 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 import { getFirestore, collection, query, addDoc, onSnapshot, doc, setDoc, getDoc } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js';
 import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-functions.js';
 
+import env from './env.js';
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDDZPmHg79mYLEh9KC2THhlZXtYgY2UHoM",
-  authDomain: "auth-games-guide.firebaseapp.com",
-  projectId: "auth-games-guide"
+  apiKey: env.APIKEY,
+  authDomain: env.AUTHDOMAIN,
+  projectId: env.PROJECTID
 };
 
 // Initialize Firebase
