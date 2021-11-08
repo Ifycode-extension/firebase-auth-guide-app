@@ -6,7 +6,7 @@
     background: var(--fixed-container-bg);
     width: 100vw;
     height: 100vh;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 }
 
 .menu-container {
@@ -16,6 +16,7 @@
     height: inherit;
     max-width: 250px;
     margin: 0 0 0 auto;
+    overflow-y: scroll;
 }
 
 @media screen and (min-width: 450px) {

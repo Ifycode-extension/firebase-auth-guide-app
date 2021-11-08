@@ -22,7 +22,7 @@ header {
     color: #222222;
     background: var(--faint);
     outline: none;
-    border: 1px solid var(--theme-lighttext);
+    border: 1px solid var(--theme-light);
 }
 
 @media screen and (min-width: 550px) {

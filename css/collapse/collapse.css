@@ -1,14 +1,4 @@
 
-.app-description {
-    font-size: 1.1em;
-    padding: 10px;
-    border: 1px solid var(--shadow);
-}
-
-
-
-
-
 .collapsible-container {
     user-select: none; /* standard syntax */
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
@@ -28,8 +18,13 @@
     padding: 10px;
 }
 
-.collapsible-container li > div:nth-child(1){
+.collapsible-header {
     font-size: 1.15em;
+    width: 100%;
+    text-align: left;
+    color: var(--theme-text);
+    background: transparent;
+    outline-color: var(--theme-light);
 }
 
 .collapsible-body {

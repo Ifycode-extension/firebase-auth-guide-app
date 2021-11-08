@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="contain header-container">
-            <a href="#" class="brand-logo">
+            <a href="./" class="brand-logo">
                 <img src="./img/logo.svg" alt="games guide logo">
             </a>
             <button class="btn show-on-ss menu-btn">Menu</button>
@@ -21,7 +21,7 @@
                         <a href="#" data-target="modal-account">Account</a>
                     </li>
                     <li class="logged-in">
-                        <a href="#" id="settings">Settings</a>
+                        <a href="#" data-target="modal-settings">Settings</a>
                     </li>
                     <li class="logged-in">
                         <a href="#" id="logout">Logout</a>
@@ -36,7 +36,7 @@
                         <a href="#" data-target="modal-signup">Sign Up</a>
                     </li>
                     <li class="logged-in-out">
-                        <a href="#" id="help">Show Help</a>
+                        <a href="#" data-target="modal-help">Show Help</a>
                     </li>
                 </ul>
             </nav>
@@ -98,6 +98,22 @@
             </div>
         </div>
 
+        <!-- SETTINGS MODAL -->
+        <div id="modal-settings" class="modal">
+            <div class="modal-content">
+                <h4>Settings</h4>
+                <div>Update settings later</div>
+            </div>
+        </div>
+
+        <!-- HELP MODAL -->
+        <div id="modal-help" class="modal">
+            <div class="modal-content">
+                <h4>Help</h4>
+                <div>Update help later</div>
+            </div>
+        </div>
+
         <!-- CREATE GUIDE MODAL -->
         <div id="modal-create" class="modal">
             <div class="modal-content">
@@ -132,7 +148,7 @@
         <div class="contain app-description">
             <p>
                 <b>Project Description: </b> Fullstack app built with 
-                firebase (firestore) web SDK 9, vanilla css and modular
+                firebase (firestore) modular web SDK 9, css and modular
                 vanilla javascript. Click on "show help" for more details.
             </p>
         </div>

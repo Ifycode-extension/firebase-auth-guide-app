@@ -76,7 +76,7 @@ export const setupGuides = (data) => {
             //console.log(guide);
             const li = `
             <li>
-                <div>${guide.title}</div>
+                <button class="collapsible-header">${guide.title}</button>
                 <div class="collapsible-body hidden"><span>${guide.content}</span></div>
             </li>
             `;

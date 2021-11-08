@@ -1,0 +1,6 @@
+
+.app-description {
+    font-size: 1.1em;
+    padding: 10px;
+    border: 1px solid var(--shadow);
+}

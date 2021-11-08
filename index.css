@@ -2,32 +2,34 @@
 /* Base + reset styles */
 @import './css/base.css';
 
-/* Common styles */
-@import './css/common.css';
+/* css code for ungrouped page styles */
+@import './css/page/common.css';
+@import './css/page/header.css';
+@import './css/page/description.css';
 
-/* Section css code */
-@import './css/section/header.css';
-@import './css/section/guides.css';
+/* btn and input-group */
+@import './css/reuse/button.css';
+@import './css/reuse/input-group.css';
 
-/* Reusable css code */
-@import './css/reusable/button.css';
-@import './css/reusable/input-group.css';
-@import './css/reusable/modal.css';
+/* nav css code */
+@import './css/nav/header.css';
+@import './css/nav/nav.css';
+@import './css/nav/navlinks.css';
+@import './css/nav/navjs.css';
+@import './css/nav/show-on-ss.css';
+
+/* modal css code */
+@import './css/modal/modal.css';
+
+/* collapsible lists css code */
+@import './css/collapse/collapse.css';
 
 /* User role css code */
-@import './css/user-role/admin.css';
-@import './css/user-role/other.css';
+@import './css/role/admin.css';
+@import './css/role/other.css';
 
-/* helper css code */
-@import './css/helpers/header.css';
-@import './css/helpers/nav.css';
-@import './css/helpers/navlinks.css';
-@import './css/helpers/show-on-ss.css';
+/* helper code */
+@import './css/helper/displayjs.css';
+@import './css/helper/error.css';
 
-/* helper js code */
-@import './css/helpers/displayjs.css';
-@import './css/helpers/navjs.css';
-
-/* error css code */
-@import './css/error.css';
 

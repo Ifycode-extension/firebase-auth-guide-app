@@ -7,7 +7,7 @@ input,
 textarea {
     width: 100%;
     border: 1px solid transparent;
-    border-bottom: 1px solid var(--theme-lighttext);
+    border-bottom: 1px solid var(--theme-light);
     padding: 5px;
     font-size: 1em;
     color: var(--theme-text);
@@ -16,7 +16,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-    border: 1px solid var(--theme-lighttext);
+    border: 1px solid var(--theme-light);
     box-shadow: 1px 1px 10px var(--shadow);
     border-radius: 3px;
     outline: none;
@@ -31,7 +31,7 @@ label {
     top: 50%;
     transform: translateY(-50%);
     left: 0;
-    color: var(--theme-lighttext);
+    color: var(--theme-light);
     cursor: text;
 }
 
