@@ -56,22 +56,11 @@ auth.onAuthStateChanged(user => {
             user.admin = idTokenResult.claims.admin;
             setupUI(user);
         });
-
-        /*
-        // Get firestore data only if user is logged in
-        const q = query(collection(db, 'guides'));
-        // Realtime updates: Use onSnapshot (instead of getDocs)
-        onSnapshot(q, (snapshot) => {
-            setupGuides(snapshot.docs);
-        }, (err) => {
-            console.log(err.message);
-        });
-        */
+        //onSnapshot() code used to be here before you changed rules on firebase
     } else {
         console.log('User logged out! user:', user);
         
-        //Use empty array if user is NOT logged in
-        //setupGuides([]);
+        //setupGuides([]); //Use empty array if user is NOT logged in
         setupUI(); //leaving it empty evaluates to null/false
     }
 });

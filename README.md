@@ -1,4 +1,4 @@
-## Games guide project
+## (Firebase) auth guide app
 
 ### Firestore database rules
 

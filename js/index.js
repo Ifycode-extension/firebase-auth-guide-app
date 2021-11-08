@@ -86,9 +86,9 @@ export const setupGuides = (data) => {
         });
         guidesList.innerHTML = html;
         expandLists();
-    } /*else {
-        guidesList.innerHTML = `<h5 class="not-loggedIn">Login to view guides </h5>`;
-    }*/
+    } else {
+        //guidesList.innerHTML = `<h5 class="not-loggedIn">Login to view guides </h5>`;
+    }
     
 }
 
