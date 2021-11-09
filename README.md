@@ -28,7 +28,7 @@ service cloud.firestore {
     //match logged in user doc in users collection: allow the user to create if logged in, allow the user to read only his/her own data
     match /users/{userId} {
     	allow create: if request.auth.uid != null;
-      allow read: if request.auth.uid == userId;
+      	allow read: if request.auth.uid == userId;
     }
     
     //match docs in the guides collection, and allow access if user exists
@@ -44,7 +44,7 @@ Rules for guides change so that only admins can write to guides in [tutorial 21 
 ````
 //match docs in the guides collection, and allow access if user exists
 match /guides/{guideId} {
-  allow read: if request.auth.uid != null;
+  	allow read: if request.auth.uid != null;
 	allow write: if request.auth.token.admin == true;
 }
 ````
@@ -54,7 +54,7 @@ In the end, I changed the rules for guides so that everyone (user or not) can re
 ````
 //match docs in the guides collection. Allow read access to anyone, but write access to admin only
 match /guides/{guideId} {
-  allow read,
+  	allow read;
 	allow write: if request.auth.token.admin == true;
 }
 ````
